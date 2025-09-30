@@ -89,6 +89,31 @@ brew install --cask neteasemusic
 
 > ⚠️ 把cursor增加到右键
 
+### 12. LULU安全网络防火墙
+
+**下载地址：** https://github.com/objective-see/LuLu/releases
+
+特点：开源、安全防控
+
+### 13. Navicat
+
+**Navicat lite**: 免费正版：https://www.navicat.com/en/download/navicat-premium-lite
+
+**Navicat Pro**：自行寻找
+
+### 14. lxmusic
+
+软件本体：https://github.com/lyswhut/lx-music-desktop
+
+音乐源（进dc查找）：https://antfe.com/dc
+
+### 15. maczip
+
+下载：https://ezip.awehunt.com
+
+### 16. office
+
+https://github.com/alsyundawy/Microsoft-Office-For-MacOS?tab=readme-ov-file
 
 ## 3. 🚀 Node.js 环境配置
 
@@ -167,3 +192,63 @@ git config user.name "Your Name"
 ## 7. 🎨 MacBook 系统设置
 
 > 待补充
+
+
+## 8. GoLang
+
+### 1. 版本号查询
+
+https://github.com/golang/go/tags
+
+### 2. 安装
+
+```bash
+brew install goenv
+
+# .zshrc
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOENV_ROOT/shims:$PATH"
+
+goenv install 1.25.0
+goenv global 1.25.0
+
+# 为单独项目设置
+goenv local 1.25.0
+
+# 切换源吧
+go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
+```
+
+## 9. 数据库
+
+### 1. postgresql
+
+```bash
+brew search postgresql
+brew install postgresql@17
+brew services start postgresql@17
+
+# 废弃了
+# echo 'export PATH="/usr/local/opt/postgresql@16/bin:$PATH"' >> ~/.zshrc
+
+# 新的目录
+echo 'export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"' >> ~/.zshrc
+
+source ~/.zshrc
+
+psql postgres
+
+# 创建用户
+CREATE USER vadxq WITH PASSWORD '123456';
+ALTER USER vadxq WITH SUPERUSER;
+```
+
+### 2. redis
+
+```bash
+brew install redis
+brew services start redis
+brew services info redis
+```
