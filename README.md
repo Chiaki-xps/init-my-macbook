@@ -147,6 +147,14 @@ ssh-keygen -t ed25519 -C "your-email@example.com"
 
 # 查看公钥内容
 cat ~/.ssh/id_ed25519.pub
+
+# 配置 Git 身份信息（全局）
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+# 仅为当前仓库配置
+git config user.email "you@example.com"
+git config user.name "Your Name"
 ```
 
 ### 2. 配置 GitHub
