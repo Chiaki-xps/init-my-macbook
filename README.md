@@ -191,7 +191,8 @@ git config user.name "Your Name"
 
 ## 7. 🎨 MacBook 系统设置
 
-> 待补充
+### 1. Clash Verge 系统代理工具
+[https://github.com/clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev)
 
 
 ## 8. GoLang
