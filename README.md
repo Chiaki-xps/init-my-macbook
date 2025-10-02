@@ -1,4 +1,4 @@
-# MacBook 安装记录
+# 初始化我的 MacBook
 
 > 这个文档的目的是每次拿到新的 MacBook 时，方便快速初始化笔记本，安装必备工具并记录必要的配置。
 
@@ -91,9 +91,9 @@ brew install --cask neteasemusic
 
 **下载地址：** https://macked.app/irightmouse-crack.html
 
-> ⚠️ 把cursor增加到右键
+> ⚠️ 将 Cursor 添加到右键菜单
 
-### 12. LULU安全网络防火墙
+### 12. LuLu 安全网络防火墙
 
 **下载地址：** https://github.com/objective-see/LuLu/releases
 
@@ -115,7 +115,7 @@ brew install --cask neteasemusic
 
 下载：https://ezip.awehunt.com
 
-### 16. office
+### 16. Microsoft Office
 
 https://github.com/alsyundawy/Microsoft-Office-For-MacOS?tab=readme-ov-file
 
@@ -162,7 +162,9 @@ git clone https://github.com/dracula/iterm.git
 
 **安装步骤：** https://draculatheme.com/iterm
 
-## 5. 🔧 VS Code 扩展
+## 5. 🔧 VSCode 扩展与配置
+
+```
 
 > 待补充
 
@@ -199,7 +201,7 @@ git config user.name "Your Name"
 [https://github.com/clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev)
 
 
-## 8. GoLang
+## 8. GoLang 环境
 
 ### 1. 版本号查询
 
@@ -228,7 +230,7 @@ go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
 
 ## 9. 数据库
 
-### 1. postgresql
+### 1. PostgreSQL
 
 ```bash
 brew search postgresql
