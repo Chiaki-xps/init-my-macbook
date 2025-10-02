@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkinit_my_macbook=self.webpackChunkinit_my_macbook||[]).push([[647],{7121:(e,s,r)=>{r.r(s),r.d(s,{default:()=>o});r(6540);var a=r(4164),c=r(7559),n=r(5500),t=r(2831),u=r(1656),i=r(4848);function o(e){return(0,i.jsx)(n.e3,{className:(0,a.A)(c.G.wrapper.docsPages),children:(0,i.jsx)(u.A,{children:(0,t.v)(e.route.routes)})})}}}]);
