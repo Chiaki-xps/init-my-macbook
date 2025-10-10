@@ -181,7 +181,7 @@ git clone https://github.com/dracula/iterm.git
 
 **安装步骤：** https://draculatheme.com/iterm
 
-### 4. zsh-autosuggestions
+### 4. zsh-autosuggestions（命令自动补全建议插件）
 
 ```zsh
 brew install zsh-autosuggestions
@@ -205,6 +205,12 @@ brew install zsh-autosuggestions
 验证是否生效：打开新终端，输入部分命令应出现灰色联想；或执行
 ```bash
 grep -n "zsh-autosuggestions.zsh" ~/.zshrc
+```
+
+### 5. zsh-syntax-highlighting（语法高亮插件）
+
+```zsh
+brew install zsh-syntax-highlighting
 ```
 
 ## 5. 🔧 VSCode 扩展与配置
