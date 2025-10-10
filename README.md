@@ -1,6 +1,6 @@
 # 初始化我的 MacBook
 
-> 这个文档的目的是每次拿到新的 MacBook 时，方便快速初始化笔记本，安装必备工具并记录必要的配置。
+> 这个文档的目的是每次拿到新的 MacBook 时，方便快速初始化笔记本，安装必备工具并记录必要的配置。也是想收集大家平时好用的软件，及时体验上新的好工具
 
 ## 如何贡献这个文档
 
@@ -18,7 +18,7 @@
 brew --version
 ```
 
-**官网地址：** https://brew.sh/zh-cn/
+**官网地址：** [https://brew.sh/zh-cn/](https://brew.sh/zh-cn/)
 
 ### 2. Visual Studio Code
 
@@ -31,11 +31,30 @@ brew install --cask visual-studio-code
 2. 输入 `shell command`
 3. 选择并运行：`Shell Command: Install 'code' command in PATH`
 
-### 3. Typora（Markdown 编辑器）
+### 3. Cursor
 
-**下载地址：** https://xclient.info/s/typora.html
+```bash
+brew install --cask cursor
+```
 
-### 4. QQ、WeChat、腾讯会议
+**导入 VS Code 配置**：首选项 → Cursor Setting → Import Settings from VS Code
+
+  + 这里提供一下导入vscode插件失败的方案（谨慎使用，因为Cursor最新版本和VS Code部分插件存在兼容问题）
+
+  1. ```bash
+     # 找到 cursor 程序下 product.json
+     code /Applications/Cursor.app/Contents/Resources/app/product.json
+     ```
+
+  2. 找到 `extensionsGallery`，将其中 `https://marketplace.cursorapi.com` 改成 `https://marketplace.visualstudio.com`
+
+  3. 重启，重新导入就可以了，**记得还原文件**
+
+### 4. Typora（Markdown 编辑器）
+
+**下载地址：** [https://xclient.info/s/typora.html](https://xclient.info/s/typora.html)
+
+### 5. QQ、WeChat、腾讯会议
 
 ```bash
 brew install --cask wechat qq tencent-meeting
@@ -43,25 +62,25 @@ brew install --cask wechat qq tencent-meeting
 
 > ⚠️ 记得修改存储路径
 
-### 5. Mos（鼠标滚动方向调整）
+### 6. Mos（鼠标滚动方向调整）
 
 ```bash
 brew install --cask mos
 ```
 
-### 6. 有道词典
+### 7. 有道词典
 
 ```bash
 brew install --cask youdaodict
 ```
 
-### 7. Snipaste（截图工具）
+### 8. Snipaste（截图工具）
 
 ```bash
 brew install --cask snipaste
 ```
 
-### 8. FNM（Node.js 版本管理）
+### 9. FNM（Node.js 版本管理）
 
 ```bash
 brew install fnm
@@ -77,47 +96,47 @@ brew install fnm
 3. 重新加载配置：`source ~/.zshrc`
 4. 设置默认版本：`fnm default <版本号>`
 
-### 9. CleanMyMac X（系统清理）
+### 10. CleanMyMac X（系统清理）
 
-**下载地址：** https://www.macwk.com/soft/cleanmymac-x
+**下载地址：** [https://www.macwk.com/soft/cleanmymac-x](https://www.macwk.com/soft/cleanmymac-x)
 
-### 10. 网易云音乐
+### 11. 网易云音乐
 
 ```bash
 brew install --cask neteasemusic
 ```
 
-### 11. 超级右键
+### 12. 超级右键
 
 **下载地址：** https://macked.app/irightmouse-crack.html
 
 > ⚠️ 将 Cursor 添加到右键菜单
 
-### 12. LuLu 安全网络防火墙
+### 13. LuLu 安全网络防火墙
 
 **下载地址：** https://github.com/objective-see/LuLu/releases
 
 特点：开源、安全防控
 
-### 13. Navicat
+### 14. Navicat
 
 **Navicat lite**: 免费正版：https://www.navicat.com/en/download/navicat-premium-lite
 
 **Navicat Pro**：自行寻找
 
-### 14. lxmusic
+### 15. lxmusic
 
-软件本体：https://github.com/lyswhut/lx-music-desktop
+软件本体：[https://github.com/lyswhut/lx-music-desktop](https://github.com/lyswhut/lx-music-desktop)
 
-音乐源（进dc查找）：https://antfe.com/dc
+音乐源（进 dc 查找）：[https://antfe.com/dc](https://antfe.com/dc)
 
-### 15. maczip
+### 16. maczip
 
-下载：https://ezip.awehunt.com
+下载：[https://ezip.awehunt.com](https://ezip.awehunt.com)
 
-### 16. Microsoft Office
+### 17. Microsoft Office
 
-https://github.com/alsyundawy/Microsoft-Office-For-MacOS?tab=readme-ov-file
+[https://github.com/alsyundawy/Microsoft-Office-For-MacOS?tab=readme-ov-file](https://github.com/alsyundawy/Microsoft-Office-For-MacOS?tab=readme-ov-file)
 
 ## 3. 🚀 Node.js 环境配置
 
@@ -161,6 +180,32 @@ git clone https://github.com/dracula/iterm.git
 ```
 
 **安装步骤：** https://draculatheme.com/iterm
+
+### 4. zsh-autosuggestions
+
+```zsh
+brew install zsh-autosuggestions
+```
+
+在 `~/.zshrc` 的 `plugins` 数组中添加 `zsh-autosuggestions`，然后执行 `source ~/.zshrc`。
+
+如果出现 “zsh-autosuggestions 找不到” 的报错，可按架构选择正确路径并追加到 `~/.zshrc`：
+
+- Apple 芯片（Homebrew 默认前缀 `/opt/homebrew`）
+  ```bash
+  echo 'source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+  source ~/.zshrc
+  ```
+- Intel 芯片（Homebrew 默认前缀 `/usr/local`）
+  ```bash
+  echo 'source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+  source ~/.zshrc
+  ```
+
+验证是否生效：打开新终端，输入部分命令应出现灰色联想；或执行
+```bash
+grep -n "zsh-autosuggestions.zsh" ~/.zshrc
+```
 
 ## 5. 🔧 VSCode 扩展与配置
 
