@@ -1,6 +1,16 @@
 # 初始化我的 MacBook
 
+[![GitHub](https://img.shields.io/badge/GitHub-Chiaki--xps%2Finit--my--macbook-blue?logo=github)](https://github.com/Chiaki-xps/init-my-macbook)
+[![Website](https://img.shields.io/badge/Website-在线文档-green)](https://chiaki-xps.github.io/init-my-macbook/)
+[![License](https://img.shields.io/github/license/Chiaki-xps/init-my-macbook)](https://github.com/Chiaki-xps/init-my-macbook/blob/main/LICENSE)
+
 > 这个文档的目的是每次拿到新的 MacBook 时，方便快速初始化笔记本，安装必备工具并记录必要的配置。也是想收集大家平时好用的软件，及时体验上新的好工具
+
+## 🔗 相关链接
+
+- **GitHub 仓库**: [https://github.com/Chiaki-xps/init-my-macbook](https://github.com/Chiaki-xps/init-my-macbook)
+- **在线文档**: [https://chiaki-xps.github.io/init-my-macbook/](https://chiaki-xps.github.io/init-my-macbook/)
+- **提供您认为好用的软件**: [GitHub Issues](https://github.com/Chiaki-xps/init-my-macbook/issues)
 
 ## 如何贡献这个文档
 

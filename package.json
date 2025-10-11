@@ -2,8 +2,29 @@
   "name": "init-my-macbook",
   "version": "0.0.0",
   "private": true,
+  "description": "MacBook 初始化与开发环境安装记录，开箱即用的工具清单",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chiaki-xps/init-my-macbook.git"
+  },
+  "homepage": "https://chiaki-xps.github.io/init-my-macbook/",
+  "bugs": {
+    "url": "https://github.com/Chiaki-xps/init-my-macbook/issues"
+  },
+  "author": "Chiaki-xps",
+  "keywords": [
+    "macbook",
+    "初始化",
+    "开发环境",
+    "工具清单",
+    "homebrew",
+    "nodejs",
+    "golang",
+    "docusaurus"
+  ],
   "scripts": {
     "docusaurus": "docusaurus",
+    "dev": "docusaurus start",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
