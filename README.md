@@ -109,9 +109,11 @@ brew install fnm
 3. 重新加载配置：`source ~/.zshrc`
 4. 设置默认版本：`fnm default <版本号>`
 
-### 10. CleanMyMac X（系统清理）
+### 10. 系统清理
 
-**下载地址：** [https://www.macwk.com/soft/cleanmymac-x](https://www.macwk.com/soft/cleanmymac-x)
++ CleanMyMac X：**下载地址：** [https://www.macwk.com/soft/cleanmymac-x](https://www.macwk.com/soft/cleanmymac-x)
+
++ 腾讯柠檬清理（tencent-lemon）：`brew install --cask tencent-lemon`
 
 ### 11. 网易云音乐
 
