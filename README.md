@@ -60,9 +60,12 @@ brew install --cask cursor
 
   3. 重启，重新导入就可以了，**记得还原文件**
 
-### 4. Typora（Markdown 编辑器）
+### 4. Markdown 编辑器
 
-**下载地址：** [https://xclient.info/s/typora.html](https://xclient.info/s/typora.html)
++ Typora：**下载地址：** [https://xclient.info/s/typora.html](https://xclient.info/s/typora.html)
+  + 页面简洁，个人感觉展示效果更好，但是收费。低版本免费。
++ Obsidian：**下载方式：**`brew install --cask obsidian`
+  + 功能强大，基础功能免费
 
 ### 5. QQ、WeChat、腾讯会议
 
