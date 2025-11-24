@@ -20,17 +20,128 @@
 
 ### 1. Homebrew（包管理器）
 
-```bash
-# 安装命令
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
++ 安装命令
 
-# 验证是否成功
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
++ 验证是否成功
+
+```bash
 brew --version
 ```
 
 **官网地址：** [https://brew.sh/zh-cn/](https://brew.sh/zh-cn/)
 
-### 2. Visual Studio Code
+### 2. 配置 github
+
+```bash
+# 1. 生成新的 SSH 密钥对
+ssh-keygen -t ed25519 -C "your-email@example.com"
+
+# 2. 查看公钥内容
+cat ~/.ssh/id_ed25519.pub
+
+# 3. 配置 github
+	# 1. 复制公钥内容
+	# 2. 登录 GitHub → Settings → SSH and GPG keys
+	# 3. 点击 "New SSH key"
+	# 4. 粘贴公钥并保存
+
+# 4. 配置 Git 身份信息（全局）
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+# 5. 仅为当前仓库配置
+git config user.email "you@example.com"
+git config user.name "Your Name"
+```
+
+### 3. iTerm2
+
+```bash
+brew install --cask iterm2
+```
+
+**设置为默认终端：**
+- 打开 iTerm2
+- 菜单栏：iTerm2 → Make iTerm2 Default Term
+
+#### 3.1 Oh My Zsh
+
+```bash
+# 安装 Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+#### 3.2 Dracula 主题
+
+```bash
+# 下载主题仓库
+git clone https://github.com/dracula/iterm.git
+```
+
+**安装步骤：** https://draculatheme.com/iterm
+1. _iTerm2 > settings > Profiles > Colors Tab_;
+2. Open the _Color Presets..._ drop-down in the bottom right corner;
+3. Select _Import..._ from the list;
+4. Select the `Dracula.itermcolors` file;
+5. Select the _Dracula_ from _Color Presets..._. 💜
+6. 删除仓库
+
+#### 3.3 zsh-autosuggestions（命令自动补全建议插件）
+
+```zsh
+brew install zsh-autosuggestions
+```
+
++ 如果你是通过 homebrew 安装的 zsh 和相关插件的话，使用方法二
++ 方法一：
+	+ 在 `~/.zshrc` 的 `plugins` 数组中添加 `zsh-autosuggestions`，然后执行 `source ~/.zshrc`。
+
+```bash
+plugins=(git zsh-autosuggestions)
+```
+
++ 由于你是通过 homebrew 安装的，所以需要拼接前缀
+	+ 按架构选择正确路径并追加到 `~/.zshrc`：
+	- Apple 芯片（Homebrew 默认前缀 `/opt/homebrew`）
+
+  ```bash
+  echo 'source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+  
+  source ~/.zshrc
+  ```
+
+	+  Intel 芯片（Homebrew 默认前缀 `/usr/local`）
+
+  ```bash
+  echo 'source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+  
+  source ~/.zshrc
+  ```
+
+验证是否生效：打开新终端，输入部分命令应出现灰色联想；或执行
+```bash
+grep -n "zsh-autosuggestions.zsh" ~/.zshrc
+```
+
+#### 3.4 zsh-syntax-highlighting（语法高亮插件）
+
+```zsh
+brew install zsh-syntax-highlighting
+```
+
++ 配置
+
+```bash
+echo 'source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc
+
+source ~/.zshrc
+```
+
+### 4. Visual Studio Code
 
 ```bash
 brew install --cask visual-studio-code
@@ -41,11 +152,13 @@ brew install --cask visual-studio-code
 2. 输入 `shell command`
 3. 选择并运行：`Shell Command: Install 'code' command in PATH`
 
-### 3. Cursor
+### 5. Cursor
 
 ```bash
 brew install --cask cursor
 ```
+
++ 安装 cursor 命令安装和 vscode 相同
 
 **导入 VS Code 配置**：首选项 → Cursor Setting → Import Settings from VS Code
 
@@ -60,14 +173,16 @@ brew install --cask cursor
 
   3. 重启，重新导入就可以了，**记得还原文件**
 
-### 4. Markdown 编辑器
+### 6. Markdown 编辑器
 
 + Typora：**下载地址：** [https://xclient.info/s/typora.html](https://xclient.info/s/typora.html)
   + 页面简洁，个人感觉展示效果更好，但是收费。低版本免费。
+  + 部份大厂定位违规软件，必须购买正版才能用
+  
 + Obsidian：**下载方式：**`brew install --cask obsidian`
   + 功能强大，基础功能免费
 
-### 5. QQ、WeChat、腾讯会议
+### 7. QQ、WeChat、腾讯会议
 
 ```bash
 brew install --cask wechat qq tencent-meeting
@@ -75,25 +190,31 @@ brew install --cask wechat qq tencent-meeting
 
 > ⚠️ 记得修改存储路径
 
-### 6. Mos（鼠标滚动方向调整）
+### 8. Mos（鼠标滚动方向调整）
 
 ```bash
 brew install --cask mos
 ```
 
-### 7. 有道词典
+### 9. 谷歌浏览器
+
+```bash
+brew install --cask google-chrome
+```
+
+### 10. 有道词典
 
 ```bash
 brew install --cask youdaodict
 ```
 
-### 8. Snipaste（截图工具）
+### 11. Snipaste（截图工具）
 
 ```bash
 brew install --cask snipaste
 ```
 
-### 9. FNM（Node.js 版本管理）
+### 12. FNM（Node.js 版本管理）
 
 ```bash
 brew install fnm
@@ -109,53 +230,65 @@ brew install fnm
 3. 重新加载配置：`source ~/.zshrc`
 4. 设置默认版本：`fnm default <版本号>`
 
-### 10. 系统清理
+### 13. 系统清理
 
 + CleanMyMac X：**下载地址：** [https://www.macwk.com/soft/cleanmymac-x](https://www.macwk.com/soft/cleanmymac-x)
 
 + 腾讯柠檬清理（tencent-lemon）：`brew install --cask tencent-lemon`
 
-### 11. 网易云音乐
+### 14. 网易云音乐
 
 ```bash
 brew install --cask neteasemusic
 ```
 
-### 12. 超级右键
+### 15. 右键工具
 
-**下载地址：** https://macked.app/irightmouse-crack.html
+#### 15.1 超级右键
+
+**下载地址：** https://macked.app/irightmouse-pro-crack.html
+
++ 这个功能更强大，收费
 
 > ⚠️ 将 Cursor 添加到右键菜单
 
-### 13. LuLu 安全网络防火墙
+#### 15.2 easy new file
+
++ 比超级右键更轻量，功能比较少，我安装的时候是免费的，现在应该收费
+
+## 2. 🧰 其他软件
+
+> ⚠️ 下面的软件没有经过我的测试，斟酌安装
+
+### 1. Microsoft Office
+
+[https://github.com/alsyundawy/Microsoft-Office-For-MacOS?tab=readme-ov-file](https://github.com/alsyundawy/Microsoft-Office-For-MacOS?tab=readme-ov-file)
+
+### 2. LuLu 安全网络防火墙
 
 **下载地址：** https://github.com/objective-see/LuLu/releases
 
 特点：开源、安全防控
 
-### 14. Navicat
+### 3. Navicat
 
 **Navicat lite**: 免费正版：https://www.navicat.com/en/download/navicat-premium-lite
 
 **Navicat Pro**：自行寻找
 
-### 15. lxmusic
+### 4. lxmusic
 
 软件本体：[https://github.com/lyswhut/lx-music-desktop](https://github.com/lyswhut/lx-music-desktop)
 
 音乐源（进 dc 查找）：[https://antfe.com/dc](https://antfe.com/dc)
 
-### 16. maczip
+### 5. maczip
 
 下载：[https://ezip.awehunt.com](https://ezip.awehunt.com)
 
-### 17. Microsoft Office
-
-[https://github.com/alsyundawy/Microsoft-Office-For-MacOS?tab=readme-ov-file](https://github.com/alsyundawy/Microsoft-Office-For-MacOS?tab=readme-ov-file)
-
 ## 3. 🚀 Node.js 环境配置
 
-### 安装包管理工具
+### 1. 安装包管理工具
 
 ```bash
 # 安装 nrm（npm 源管理）
@@ -167,99 +300,6 @@ npm install pnpm -g
 # ARM Mac 需要安装 Rosetta 以支持低版本 Node
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 ```
-
-## 4. 🖥️ 终端配置
-
-### 1. iTerm2
-
-```bash
-brew install --cask iterm2
-```
-
-**设置为默认终端：**
-- 打开 iTerm2
-- 菜单栏：iTerm2 → Make iTerm2 Default Term
-
-### 2. Oh My Zsh
-
-```bash
-# 安装 Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-### 3. Dracula 主题
-
-```bash
-# 克隆主题仓库
-git clone https://github.com/dracula/iterm.git
-```
-
-**安装步骤：** https://draculatheme.com/iterm
-
-### 4. zsh-autosuggestions（命令自动补全建议插件）
-
-```zsh
-brew install zsh-autosuggestions
-```
-
-在 `~/.zshrc` 的 `plugins` 数组中添加 `zsh-autosuggestions`，然后执行 `source ~/.zshrc`。
-
-如果出现 “zsh-autosuggestions 找不到” 的报错，可按架构选择正确路径并追加到 `~/.zshrc`：
-
-- Apple 芯片（Homebrew 默认前缀 `/opt/homebrew`）
-  ```bash
-  echo 'source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
-  source ~/.zshrc
-  ```
-- Intel 芯片（Homebrew 默认前缀 `/usr/local`）
-  ```bash
-  echo 'source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
-  source ~/.zshrc
-  ```
-
-验证是否生效：打开新终端，输入部分命令应出现灰色联想；或执行
-```bash
-grep -n "zsh-autosuggestions.zsh" ~/.zshrc
-```
-
-### 5. zsh-syntax-highlighting（语法高亮插件）
-
-```zsh
-brew install zsh-syntax-highlighting
-```
-
-## 5. 🔧 VSCode 扩展与配置
-
-```
-
-> 待补充
-
-## 6. 🔑 Git 配置
-
-### 1. 生成 SSH 密钥
-
-```bash
-# 生成新的 SSH 密钥对
-ssh-keygen -t ed25519 -C "your-email@example.com"
-
-# 查看公钥内容
-cat ~/.ssh/id_ed25519.pub
-
-# 配置 Git 身份信息（全局）
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
-
-# 仅为当前仓库配置
-git config user.email "you@example.com"
-git config user.name "Your Name"
-```
-
-### 2. 配置 GitHub
-
-1. 复制公钥内容
-2. 登录 GitHub → Settings → SSH and GPG keys
-3. 点击 "New SSH key"
-4. 粘贴公钥并保存
 
 ## 7. 🎨 MacBook 系统设置
 

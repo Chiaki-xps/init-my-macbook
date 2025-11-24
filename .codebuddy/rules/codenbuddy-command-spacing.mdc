@@ -1,0 +1,11 @@
+---
+description: 确保所有命令示例之间至少有一个空行，提升可读性。
+alwaysApply: false
+enabled: true
+updatedAt: 2025-11-24T09:49:31.177Z
+provider: 
+---
+
+## Command spacing rule
+- 当在文档或代码注释中列出多条命令行时，确保相邻的命令块之间至少插入一个空行；不要把多条命令紧贴在一起。
+- 该规则适用于所有 shell、bash、zsh 等命令示例。
