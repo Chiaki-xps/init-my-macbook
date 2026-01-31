@@ -214,35 +214,19 @@ brew install --cask youdaodict
 brew install --cask snipaste
 ```
 
-### 12. FNM（Node.js 版本管理）
-
-```bash
-brew install fnm
-```
-
-**配置 FNM：**
-1. 编辑配置文件：`code ~/.zshrc`
-2. 添加以下配置：
-   ```bash
-   # fnm 配置
-   eval "$(fnm env --use-on-cd)"
-   ```
-3. 重新加载配置：`source ~/.zshrc`
-4. 设置默认版本：`fnm default <版本号>`
-
-### 13. 系统清理
+### 12. 系统清理
 
 + CleanMyMac X：**下载地址：** [https://www.macwk.com/soft/cleanmymac-x](https://www.macwk.com/soft/cleanmymac-x)
 
 + 腾讯柠檬清理（tencent-lemon）：`brew install --cask tencent-lemon`
 
-### 14. 网易云音乐
+### 13. 网易云音乐
 
 ```bash
 brew install --cask neteasemusic
 ```
 
-### 15. 右键工具
+### 14. 右键工具
 
 #### 15.1 超级右键
 
@@ -256,37 +240,35 @@ brew install --cask neteasemusic
 
 + 比超级右键更轻量，功能比较少，我安装的时候是免费的，现在应该收费
 
-## 2. 🧰 其他软件
+### 15. Whistle
 
-> ⚠️ 下面的软件没有经过我的测试，斟酌安装
++ 网络抓包工具
++ 下载地址：https://github.com/avwo/whistle-client
++ 配合谷歌浏览器插件 Zero Omega 使用。
++ 注意客户端使用的端口是 8888
 
-### 1. Microsoft Office
+### 16. DBeaver
 
-[https://github.com/alsyundawy/Microsoft-Office-For-MacOS?tab=readme-ov-file](https://github.com/alsyundawy/Microsoft-Office-For-MacOS?tab=readme-ov-file)
++ 数据库管理软件
 
-### 2. LuLu 安全网络防火墙
+```bash
+# 安装社区版
+brew install --cask dbeaver-community
+```
 
-**下载地址：** https://github.com/objective-see/LuLu/releases
++ 可以在设置中配置language
++ 链接本地mysql的时候，我们需要对`allowPublicKeyRetrieval`设置为`true`
+  + MySQL 8.x 默认使用 `caching_sha2_password` 认证插件
+  + 这种认证方式需要用 RSA 公钥加密密码传输
+  + 默认情况下，客户端不允许自动获取公钥（安全考虑）
+  + 设置为 `true` 后，允许客户端向服务器请求公钥完成认证
 
-特点：开源、安全防控
+### 17.  Clash Verge 系统代理工具
 
-### 3. Navicat
++ [https://github.com/clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev)
++ TIP：部分浏览器会导致代理失效。关闭就可以了
 
-**Navicat lite**: 免费正版：https://www.navicat.com/en/download/navicat-premium-lite
-
-**Navicat Pro**：自行寻找
-
-### 4. lxmusic
-
-软件本体：[https://github.com/lyswhut/lx-music-desktop](https://github.com/lyswhut/lx-music-desktop)
-
-音乐源（进 dc 查找）：[https://antfe.com/dc](https://antfe.com/dc)
-
-### 5. maczip
-
-下载：[https://ezip.awehunt.com](https://ezip.awehunt.com)
-
-## 3. 🚀 Node.js 环境配置
+## 2. 🚀 Node.js 环境配置
 
 ### 1. 安装包管理工具
 
@@ -301,67 +283,50 @@ npm install pnpm -g
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 ```
 
-## 7. 🎨 MacBook 系统设置
-
-### 1. Clash Verge 系统代理工具
-[https://github.com/clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev)
-
-
-## 8. GoLang 环境
-
-### 1. 版本号查询
-
-https://github.com/golang/go/tags
-
-### 2. 安装
+### 2. FNM（Node.js 版本管理）
 
 ```bash
-brew install goenv
-
-# .zshrc
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
-export PATH="$GOENV_ROOT/shims:$PATH"
-
-goenv install 1.25.0
-goenv global 1.25.0
-
-# 为单独项目设置
-goenv local 1.25.0
-
-# 切换源吧
-go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
+brew install fnm
 ```
 
-## 9. 数据库
+**配置 FNM：**
 
-### 1. PostgreSQL
+1. 编辑配置文件：`code ~/.zshrc`
 
-```bash
-brew search postgresql
-brew install postgresql@17
-brew services start postgresql@17
+2. 添加以下配置：
 
-# 废弃了
-# echo 'export PATH="/usr/local/opt/postgresql@16/bin:$PATH"' >> ~/.zshrc
+   ```bash
+   # fnm 配置
+   eval "$(fnm env --use-on-cd)"
+   ```
 
-# 新的目录
-echo 'export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"' >> ~/.zshrc
+3. 重新加载配置：`source ~/.zshrc`
 
-source ~/.zshrc
+4. 设置默认版本：`fnm default <版本号>`
 
-psql postgres
+**处理 arm 版本 mac 低版本 node**
 
-# 创建用户
-CREATE USER vadxq WITH PASSWORD '123456';
-ALTER USER vadxq WITH SUPERUSER;
+```bash 
+# 安装 Rosetta 2
+softwareupdate --install-rosetta
+
+# 同意许可协议
+softwareupdate --install-rosetta --agree-to-license
 ```
 
-### 2. redis
+**高版本启动yarn pnpm**
 
-```bash
-brew install redis
-brew services start redis
-brew services info redis
++ node 16 以上自带 yarn 和 pnpm，需要开启
+
+```bash 
+corepack enable
 ```
+
+## 3. Docker
+
+### 1. Docker DeskTop
+
+
+
+
+
